@@ -462,6 +462,7 @@ class Elementor_Shs_Widget extends \Elementor\Widget_Base {
 				align-items: center;
 				list-style: none;
 				padding: 0;
+				margin: 0;
 			}
 
 			a.step-link {
@@ -662,6 +663,8 @@ class Elementor_Shs_Widget extends \Elementor\Widget_Base {
 				const sticky_header = $('.sticky_header');
 				const specialSectionTop = sticky_header.offset().top;
 				const selected_sections = $('.sticky_header ul li a');
+				const selected_lis = $('.sticky_header ul li');
+
 				// Attach scroll event listener
 				$(window).scroll(function () {
 					checkSpecialSectionTop();
@@ -687,6 +690,10 @@ class Elementor_Shs_Widget extends \Elementor\Widget_Base {
 					})
 
 				});
+
+				selected_lis.on("click", function(){
+					selected_lis.removeClass("d-sm-none")
+				})
 			});
 		</script>
         <?php endif; ?>

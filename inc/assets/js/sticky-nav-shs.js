@@ -23,6 +23,8 @@ jQuery(document).ready(function ($) {
     const sticky_header = $('.sticky_header');
     const specialSectionTop = sticky_header.offset().top;
     const selected_sections = $('.sticky_header ul li a');
+    const selected_lis = $('.sticky_header ul li');
+
     // Attach scroll event listener
     $(window).scroll(function () {
         checkSpecialSectionTop();
@@ -48,4 +50,8 @@ jQuery(document).ready(function ($) {
         })
 
     });
+
+    selected_lis.on("click", function(){
+        selected_lis.removeClass("d-sm-none")
+    })
 });
